@@ -62,8 +62,9 @@ function np_function($type='np_function') {
 	$loop = new WP_Query($args);  
 	while ($loop->have_posts()) {  
 		$loop->the_post();  
-		$the_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $type);
-		$result .= '<div class="block">';
+		$the_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $type);		
+		$result .= '<div class="block">';		
+		$the_url[0] = str_replace('-180x100',"", $the_url[0]);		
 		$result .= '<div class="content_holder" src="' . $the_url[0] . '">';
 		$result .= '<div class="image"></div>';
 		$result .= '<div class="content" transitionType="bottom" transitionTime="0.5" distance="30" delay="0" x="0" y="0" alignV="bottom">';
@@ -113,7 +114,7 @@ function np_init() {
 	
 	add_theme_support( 'post-thumbnails' ); 
 	
-	add_image_size('np_widget', 180, 100, true);  
+	add_image_size('np_widget', 900, 400, true);  
     add_image_size('np_function', 600, 280, true);  
 	
 	$args = array(  
@@ -132,4 +133,4 @@ add_action('init', 'np_init');
 add_action('wp_print_scripts', 'np_register_scripts');  
 add_action('wp_print_styles', 'np_register_styles');  
 
-?>  
+?>
