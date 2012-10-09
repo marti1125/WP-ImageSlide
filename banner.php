@@ -86,14 +86,14 @@ function np_function($type='np_function') {
 function np_register_scripts() {  
 	if (!is_admin()) {  
 		// register
-		wp_register_script('jquery-script', plugins_url('jquery-1.6.2.min.js', __FILE__), array( 'jquery' ));  
+		//wp_register_script('jquery-script', plugins_url('jquery-1.6.2.min.js', __FILE__), array( 'jquery' ));  
 		wp_register_script('accordion-script', plugins_url('accordion.js', __FILE__), array( 'jquery' ));
 		wp_register_script('accordion_minified-script', plugins_url('accordion_minified.js', __FILE__), array( 'jquery' ));
 		wp_register_script('buttons-script', plugins_url('buttons.js', __FILE__), array( 'jquery' ));
 		wp_register_script('pngFixer-script', plugins_url('pngFixer.js', __FILE__), array( 'jquery' ));  
 		wp_register_script('np_script', plugins_url('script.js', __FILE__));  
 		// enqueue
-		wp_enqueue_script('jquery-script');  
+		//wp_enqueue_script('jquery-script');  
 		wp_enqueue_script('accordion-script');
 		wp_enqueue_script('accordion_minified-script'); 
 		wp_enqueue_script('buttons-script'); 
